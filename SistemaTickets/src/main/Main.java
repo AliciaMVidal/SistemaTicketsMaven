@@ -1,8 +1,15 @@
 package main;
 
+import java.net.URL;
 import java.util.Scanner;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
+
 public class Main {
+	private static Logger logger = LogManager.getLogger(Main.class);
 
 
 	//Crear las instancias de vagon y ticket
@@ -21,7 +28,13 @@ public class Main {
 	//Crear un menu 
 	
 	public static void menu() {
-
+		
+		ClassLoader loader = Thread.currentThread().getContextClassLoader();
+		URL url = loader.getResource("log4j.properties");
+		PropertyConfigurator.configure(url);
+		logger.info("Este es el fichero de configuración: " + url);
+		logger.warn("Esto es un aviso");
+		
 		System.out.println("Introduza el numero de la opcion que quieres realizar");
 		System.out.println("1 - Ver el estado del tren");
 		System.out.println("2 - Comprar un ticket automatico");
