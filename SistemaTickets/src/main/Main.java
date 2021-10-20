@@ -47,25 +47,30 @@ public class Main {
 		//Cuando se realice la opcion elegida se vuelve al menu
 		switch (opcion) {
 		case 1:
+			logger.info("El usuario ha usando la opcion de menu: " + opcion);
 			System.out.println("Ver estado del tren");
 			vagonObj.mostrarVagon();
 			menu();
 			break;
 		case 2:	
+			logger.info("El usuario ha usando la opcion de menu: " + opcion);
 			System.out.println("Comprando primer ticket disponible...");
 			ticketObj.comprarTicketAutomatico(vagonObj);
 			menu();
 			break;
 		case 3:
+			logger.info("El usuario ha usando la opcion de menu: " + opcion);
 			System.out.println("Comprar un ticket introduciendo posicion");
 			ticketObj.comprarTicket(vagonObj);
 			menu();
 			break;
 		case 4:
+			logger.info("El usuario ha usando la opcion de menu: " + opcion);
 			System.out.println("Cerrando compra de tickets...");
 			System.exit(0);
 			break;
 		default:
+			logger.info("El usuario ha usando la opcion de menu: " + opcion);
 			System.out.println("Opcion erronea");
 			menu();
 		}
